@@ -1,0 +1,119 @@
+
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs!-- /jquery/3.2.1/jquery.min.js"></script> 
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag f9f6f7 ---------->
+<br><br>
+<form method="post">
+
+<div class="container" style="margin-left:280px;">
+    
+    <div class="row"  >
+        <div class="col-xs-10" >
+            <div class="panel panel-primary"  >
+                <!-- Default panel contents -->
+                <div class="panel-heading" style="background-image:https://i.ibb.co/6Zy78Nw/Screenshot-2021-04-07-at-1-37-48-AM.png">
+                    <h2 class="panel-title text-right">
+           
+                    </h2>
+                </div>
+                <!--<div class="panel-body">-->
+                    <!--<img src="https://scocre.com/assets/img/scocre_img.png"/>-->
+                <!--</div>-->
+                    <ul class="list-group" >
+                    
+             
+               
+                    <li class="list-group-item">
+                     <b></b>Date : {{t.date}}<br>Time : {{t.time}}<h4 class="text-center" style="color:crimson;"><b>      {{t.test_type}} Test </b></h4>
+                     <b class="text-center"  > 
+                        {%for i in t.lid%}
+                       Lab Technician : {{i.name}}<br>Email : {{i.email}}<br>Contact : {{i.number}}</b>
+                        {%endfor%}
+                     <br><br>
+                     <table class="table table-hover">
+                     
+                        <tbody>
+                            {%for j in t.uid%}
+                            <tr>
+                                <td>  Name</td>
+                                <td>{{j.name}}</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>  Age</td>
+                                <td>{{j.age}}</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>  Gender</td>
+                                {%if j.gender=="1"%}
+                                <td>Male</td>
+                                {%else%}
+                                <td>Female</td>
+                                {%endif%}
+                                
+                            </tr>
+                            <tr>
+                                <td>  Email</td>
+                                <td>{{j.email}}</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>  Contact</td>
+                                <td>{{j.number}}</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>  Address</td>
+                                <td>{{j.address}}</td>
+                                
+                            </tr>
+                            {%endfor%}
+
+                            <tr>
+                                <td> Disease Detected </td>
+                                <td>{{t.pred}} <br>{{t.chol}} Detected <br>{{t.cp}}</td>
+                               
+                            </tr>
+
+                            
+     
+
+    </tr>
+                            
+                        </tbody>
+                       
+                        
+                    </table>
+
+
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div> <br><br>
+
+<button style="margin-left: 610px;" onclick="window.print();return false;" class="btn btn-primary">Print </button>
+<button  class="btn btn-success"><font color="white"><a href="/labtecpage/{{current_user.id}}">Back</a></font> </button>
+<br><br>
+
+<br><br><br>
+</form>
+

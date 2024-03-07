@@ -1,0 +1,84 @@
+{%extends 'patientlayout.html'%}
+{%block content%}
+
+<div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+	<div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+	  <h2 class="title pt-5">Doctors</h2>
+	  <ul class="breadcrumbs-custom-path mt-3 text-center">
+		<li><a href="/patientpage/{{current_user.id}}">Home</a></li>
+		<li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Doctors </li>
+	  </ul>
+	</div>
+  </div>
+<br><br>
+
+
+
+
+
+
+
+       <!-- specials section -->
+    <section class="w3l-portfolio-8 py-5">
+        <div class="portfolio-main py-md-5 py-4">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-8">
+                        <div class="section-heading mb-sm-5 mb-4">
+                            <h3 class="title-style mb-2"> </h3>
+                            <!-- <p class="lead">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque,
+                                eaque ipsa quae ab illo inventore.
+                            </p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row galler-top">
+                     {% for  i in obj %}
+                    <div class="col-md-4 col-sm-6 protfolio-item hover14">
+                        <a  data-lightbox="example-set" data-title="Branding Design">
+                            <figure>
+                                <img width=300 height=300 src="../static/pics/{{i.Image}}">
+                                <div class="p-4" style="margin-left: 80px;" >
+                                    <h4  >{{i.name}}</h4>
+                                        <br>
+                                    <h6><a class="mb-5 img-title">{{i.Specialisation}}</a></h3>
+                                    <h6><a class="mb-5 img-title">{{i.Qualification}}</a></h3>
+                                    <!-- <button type="submit" style="margin-left: 120px;"class="btn btn-black">Book now</button> -->
+                                    <a href='/buk_doctor/{{i.id}}'><button style="margin-left:-40px;"class="btn btn-style btn-primary w-20 mt-3">Book Now</button></a>
+
+                                    <!-- <button type="submit" style="margin-left: 120px;"class="btn btn-danger">Book now</button> -->
+                                </div>
+                            </figure>
+                        </a>
+
+                        
+                    </div>
+
+                    {%endfor%}
+                  
+
+
+
+                
+                <div class="text-center">
+                    <!-- <a href="menu.html" class="btn btn-style-white btn-style-primary mt-lg-5 mt-2">See Our Menu</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+      
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+{%endblock%}  

@@ -1,0 +1,173 @@
+
+{%extends 'adminlayout.html'%}
+{%block content%}
+
+  
+<div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+  <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+    <h2 class="title pt-5">Edit Doctor</h2>
+    <ul class="breadcrumbs-custom-path mt-3 text-center">
+      <li><a href="/adminpage">Home</a></li>
+      <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Edit Doctor </li>
+    </ul>
+  </div>
+</div>
+<!--//breadcrumb-bg-->
+<!-- banner bottom shape -->
+<div class="position-relative">
+<div class="shape overflow-hidden">
+  <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+  </svg>
+</div>
+</div>
+<br>
+<br>
+<br>
+<!-- 
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <!-- </div> --> 
+    <div class="main" style="margin-top: 50px;" >
+       <div class="col-md-6 col-sm-12" style="margin-top: 50px;" >
+          <div class="login-form" style="margin-top: 50px;" >
+             <form method="post" >
+              <div class="form-group" style="margin-top: 50px;" >
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" value="{{c.name}}" pattern="[A-Za-z ]*" placeholder="Name">
+             </div>
+                <div class="form-group" style="margin-top: 50px;" >
+                   <label>EMail</label>
+                   <input type="email" name="email" class="form-control" value="{{c.email}}" placeholder="Email ID">
+                </div>
+                <div class="form-group" style="margin-top: 50px;" >
+                  <label>Contact</label>
+                  <input type="text" pattern="[0-9]{10}" maxlength="10" value="{{c.number}}" name="number" class="form-control" placeholder="Contact">
+               </div>
+
+               
+               <div class="form-group" style="margin-top: 50px;" >
+                <label>Specialisation</label>
+                <input type="text" name="Specialisation" class="form-control" value="{{c.Specialisation}}" class="form-control"placeholder="Specialisation">
+               </div>
+
+               <div class="form-group" style="margin-top: 50px;" >
+                <label>Qualification</label>
+                 <input type="text" name="Qualification"  class="form-control" value="{{c.Qualification}}"placeholder="Qualification">
+               </div>
+
+
+
+
+               <!-- <div class="form-group" style="margin-top: 50px;" >
+                <label>Address</label>
+                <textarea name="address" class="form-control" placeholder="Address">{{c.address}}</textarea>
+             </div> -->
+                <!-- <div class="form-group" >
+                   <label>Password</label>
+                   <input type="password" name="password" class="form-control" placeholder="Password">
+                </div> -->
+                <button type="submit" style="margin-left: 120px;"class="btn btn-black">Update</button>
+                <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
+             </form>
+          </div>
+       </div>
+    </div>
+    <style>
+      body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: rgb(243, 1, 1);
+ 
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+      margin-top: 10%;
+  }
+
+  .register-form{
+      margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%; 
+  }
+
+  .sidenav{
+      width: 40%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+
+  .login-form{
+      margin-top: 80%;
+  }
+
+  .register-form{
+      margin-top: 20%;
+  }
+}
+
+
+.login-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: #000 !important;
+  color: #fff;
+}
+    </style>
+
+  
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
+
+
+

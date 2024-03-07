@@ -1,0 +1,518 @@
+{% extends 'labteclayout.html'%}
+{% block content %}
+
+<div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+  <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+    <h2 class="title pt-5">Heart Disease Detection</h2>
+    <ul class="breadcrumbs-custom-path mt-3 text-center">
+      <li><a href="/labtecpage/{{current_user.id}}">Home</a></li>
+      <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Heart Disease Detection</li>
+    </ul>
+  </div>
+</div>
+
+<div class="position-relative">
+  <div class="shape overflow-hidden">
+    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+    </svg>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="main" style="margin-top: 50px;">
+        <div class="login-form">
+          <form method="post">
+
+            <!-- Fields for the left side -->
+
+          
+
+
+
+
+
+
+            <div class="form-group" style="margin-top: 50px;">
+              <label>Gender</label>
+              <select name="gender" class="form-control">
+                <option value="1">Male</option>
+                <option value="0">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" name="age" class="form-control">
+            </div>
+
+
+
+             
+                <div class="form-group" style="margin-top: 50px;" >
+                  <label>Enter the type of thalassemia</label>
+                  <select name="thal" class="form-control">
+                    <option value="3" >Normal</option>
+                    <option value="6" >Fixed Defect</option>
+                    <option value="7" >Reversable Defect</option>
+                  </select>              
+                  </div>
+            
+              <div class="form-group" style="margin-top: 50px;" >
+                 <label>Enter the chest pain type</label>
+                 <select name="cp" class="form-control">
+                    <option value="1" >Typical Angina</option>
+                    <option value="2" >Atypical Angina</option>
+                    <option value="3" >Non - Anginal Pain </option>
+                    <option value="4" >Asymptotic</option>
+                  </select>   
+              </div>
+
+
+                <div class="form-group" >
+                   <label>Enter the resting blood pressure (in mm Hg )</label>
+                   <input type="text"  name="trestbps" class="form-control"  >
+                </div>
+                <div class="form-group" >
+                    <label>Enter the serum cholestorl reading in mg/dl</label>
+                    <input type="text"  name="chol" class="form-control"  >
+                 </div>
+
+                 <div class="form-group" style="margin-top: 50px;" >
+                    <label>Fasting Blood Sugar > 120 mg/dl</label>
+                   <select name="fbs" class="form-control">
+                     <option value="1" >True</option>
+                     <option value="0" >False</option>
+                   </select>
+                 </div>
+
+                 <div class="form-group" style="margin-top: 50px;" >
+                    <label>Enter the Resting ECG Type </label>
+                   <select name="restecg" class="form-control">
+                     <option value="0" >Normal</option>
+                     <option value="1" >Having ST-T wave abnormality</option>
+                     <option value="2" >Left Ventricular Hyperthrophy</option>
+           
+                   </select>
+                 </div>
+
+                 <div class="form-group" >
+                    <label>Enter the maximum heart rate achieved</label>
+                    <input type="text"  name="thalach" class="form-control"  >
+                 </div>
+
+                 <div class="form-group" style="margin-top: 50px;" >
+                    <label>Does the participant have exercise induced angina</label>
+                   <select name="exang" class="form-control">
+                     <option value="1" >Yes</option>
+                     <option value="0" >No</option>
+                   </select>
+                 </div>
+
+
+                 <div class="form-group"  style="margin-top: 50px;">
+                    <label>Value of ST depression induced by exercise relative to rest - (decimal value)</label>
+                    <input type="text"  name="oldpeak" class="form-control"  >
+                 </div>
+                 <div class="form-group" style="margin-top: 50px;" >
+                    <label>Value of the slope of the peak exercise ST segment </label>
+                   <select name="slope" class="form-control">
+                     <option value="1" >Upsloping</option>
+                     <option value="2" >Flat</option>
+                     <option value="3" >Downsloping</option>
+               
+                   </select>
+                 </div>
+                
+
+                 <div class="form-group" style="margin-top: 50px;" >
+                  <label>Number of major vessels (0-3) colored by flourosopy</label>
+                  <input type="number" min=1 max=3 name="ca" class="form-control" pattern="[0-9]"  >
+               </div>
+
+               <div class="form-group" style="margin-top: 50px;" >
+                <label>diarrhoea </label>
+               <select name="value1" class="form-control">
+                <option value="1">YES</option>
+                <option value="0">NO</option>  
+              </select>
+           
+               </select>
+             </div>
+               
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-4">
+            <div class="main" style="margin-top: 50px;">
+              <div class="login-form">
+
+
+                  <!-- Disease Prediction -->
+
+
+
+                 
+
+                 <div class="form-group" style="margin-top: 50px;" >
+                  <label>chills</label>
+                 <select name="value2" class="form-control">
+                  <option value="1">YES</option>
+                  <option value="0">NO</option>  
+          </select>
+             
+                 </select>
+               </div>
+
+               <div class="form-group" style="margin-top: 50px;" >
+                <label>high_fever</label>
+               <select name="value3" class="form-control">
+                <option value="1">YES</option>
+                <option value="0">NO</option>  
+        </select>
+           
+               </select>
+             </div>
+
+             <div class="form-group" style="margin-top: 50px;" >
+              <label>polyuria </label>
+             <select name="value4" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option>  
+      </select>
+         
+             </select>
+           </div>
+
+           <div class="form-group" style="margin-top: 50px;" >
+            <label>itching</label>
+           <select name="value5" class="form-control">
+            <option value="1">YES</option>
+            <option value="0">NO</option>  
+    </select>
+           </select>
+         </div>
+
+         <div class="form-group" style="margin-top: 50px;" >
+          <label>skin_rash </label>
+         <select name="value6" class="form-control">
+          <option value="1">YES</option>
+          <option value="0">NO</option>  
+  </select>
+     
+         </select>
+       </div>
+
+       <div class="form-group" style="margin-top: 50px;" >
+        <label>nodal_skin_eruptions </label>
+       <select name="value7" class="form-control">
+        <option value="1">YES</option>
+        <option value="0">NO</option>  
+</select>
+   
+       </select>
+     </div>
+
+     <div class="form-group" style="margin-top: 50px;" >
+      <label>dehydration </label>
+     <select name="value8" class="form-control">
+      <option value="1">YES</option>
+      <option value="0">NO</option>  
+</select>
+ 
+     </select>
+   </div>
+
+   <div class="form-group" style="margin-top: 50px;" >
+    <label>increased_appetite</label>
+   <select name="value9" class="form-control">
+    <option value="1">YES</option>
+    <option value="0">NO</option>  
+</select>
+
+   </select>
+ </div>
+
+ <div class="form-group" style="margin-top: 50px;" >
+  <label>patches_in_throat </label>
+ <select name="value10" class="form-control">
+  <option value="1">YES</option>
+  <option value="0">NO</option>  
+</select>
+
+ </select>
+</div>
+
+
+
+            <!-- Parkinson Prediction -->
+
+
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Tremor_of_one_hand </label>
+             <select name="Tremor_of_one_hand" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option>   
+            </select>
+            
+             </select>
+            </div>
+
+            
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Rigidity </label>
+             <select name="Rigidity" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+          
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="col-md-4">
+      <div class="main" style="margin-top: 50px;">
+        <div class="login-form">
+        
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Clumsy_Leg </label>
+             <select name="Clumsy_Leg" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option>   
+            </select>
+            
+             </select>
+            </div>
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>One_side_of_the_face_may_be_affect </label>
+             <select name="One_side_of_the_face_may_be_affect" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Loss_of_facial_expression </label>
+             <select name="Loss_of_facial_expression" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Decrease_blinking </label>
+             <select name="Decrease_blinking" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Speech_abnormalities </label>
+             <select name="Speech_abnormalities" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option>   
+            </select>
+            
+             </select>
+            </div>
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Balancing_problem </label>
+             <select name="Balancing_problem" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Fall_when_standing_or_turning </label>
+             <select name="Fall_when_standing_or_turning" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Freeze_or_stumble_when_walking </label>
+             <select name="Freeze_or_stumble_when_walking" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option>  
+            </select>
+            
+             </select>
+            </div>
+
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Hallucinations </label>
+             <select name="Hallucinations" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option>   
+            </select>
+            
+             </select>
+            </div>
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Loss_of_automatic_movements </label>
+             <select name="Loss_of_automatic_movements" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Writing_changes </label>
+             <select name="Writing_changes" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+
+            <div class="form-group" style="margin-top: 50px;" >
+              <label>Need_assistance_for_walking </label>
+             <select name="Need_assistance_for_walking" class="form-control">
+              <option value="1">YES</option>
+              <option value="0">NO</option> 
+            </select>
+            
+             </select>
+            </div>
+
+                <button type="submit" style="margin-left: 120px;"class="btn btn-black">PREDICT</button>
+                <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <style>
+      body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: rgb(243, 1, 1);
+ 
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+      margin-top: 10%;
+  }
+
+  .register-form{
+      margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%; 
+  }
+
+  .sidenav{
+      width: 40%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+
+  .login-form{
+      margin-top: 80%;
+  }
+
+  .register-form{
+      margin-top: 20%;
+  }
+}
+
+
+.login-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: #000 !important;
+  color: #fff;
+}
+    </style>
+
+  
+{%endblock%}
+
+
+

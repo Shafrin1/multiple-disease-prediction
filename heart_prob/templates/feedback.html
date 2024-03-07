@@ -1,0 +1,66 @@
+{%extends 'patientlayout.html'%}
+{%block content%}
+
+
+  
+<div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+  <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+    <h2 class="title pt-5">Contact</h2>
+    <ul class="breadcrumbs-custom-path mt-3 text-center">
+      <li><a href="/patientpage/{{current_user.id}}">Home</a></li>
+      <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Contact </li>
+    </ul>
+  </div>
+</div>
+<!--//breadcrumb-bg-->
+<!-- banner bottom shape -->
+<div class="position-relative">
+<div class="shape overflow-hidden">
+  <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+  </svg>
+</div>
+</div>
+<br>
+<br>
+<br>
+ 
+
+  <section class="w3l-contact-2 py-5" id="contact">
+    <div class="container py-lg-5 py-md-4 py-2">
+      <div class="contact-grids d-grid">
+      
+        <div class="contact-right" style="margin-left: 350px; width: 500px;">
+          <form  method="post" class="signin-form">
+            {%if d%}<h4>{{d}}</h4><br>{%endif%}
+            <div class="input-grids">
+              <input type="text" name="name" readonly value="{{current_user.name}}" pattern="[A-Za-z ]*" id="w3lName" placeholder="Your Name*" class="contact-input"
+                required="" />
+              <input type="email" name="email" readonly value="{{current_user.email}}" id="w3lSender" placeholder="Your Email*" class="contact-input"
+                required="" />
+              <input type="text" pattern="[0-9]{10}" readonly value="{{current_user.number}}" maxlength="10" name="number" id="w3lSubect" placeholder="Contact*" class="contact-input"
+                required="" />
+       <!-- <input type="text" name="text" id="w3lWebsite" placeholder="Website URL*" class="contact-input"
+                required="" />  -->
+              </div>
+              <div class="form-input">
+                <textarea name="text" id="w3lMessage" placeholder="Type your message here*" required=""></textarea>
+              </div>
+              <div class="w3l-submit text-lg-right">
+              <button type="submit" class="btn btn-style btn-primary">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </section>
+    <!-- /map-->
+   
+
+  
+{%endblock%}
+
+
+
+
+
+

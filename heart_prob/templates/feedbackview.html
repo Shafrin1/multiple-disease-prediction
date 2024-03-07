@@ -1,0 +1,56 @@
+{% extends 'adminlayout.html' %}
+{% block content %}
+
+<!-- Include Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-euJ8vDHMbrXmRGnV0eV6fs/xmpfwz1eu1tfLh9RgKQep9OX3PB0L4R14p/le0XMt/FR1MolR7eMhQdldoG9M8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+    <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+        <h2 class="title pt-5">Feedbacks</h2>
+        <ul class="breadcrumbs-custom-path mt-3 text-center">
+            <li><a href="/adminpage">Home</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        {% for feedback in obj %}
+        <div class="col-md-6 mb-4">
+            <div class="card feedback-card">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ feedback.name }}</h4>
+                    <p class="card-text"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ feedback.email }}</p>
+                    <p class="card-text"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ feedback.text }}</p>
+                    <p class="card-text"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ feedback.number }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .feedback-card {
+        border: 1px solid #007bff; /* Blue border */
+        border-radius: 10px;
+        transition: box-shadow 0.3s;
+    }
+
+    .feedback-card:hover {
+        box-shadow: 0px 0px 15px rgba(0, 123, 255, 0.2); /* Light blue shadow */
+    }
+
+    .card-title {
+        color: #007bff; /* Blue title */
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .card-text {
+        color: #555; /* Dark grey text */
+        margin-bottom: 5px;
+    }
+</style>
+
+{% endblock %}

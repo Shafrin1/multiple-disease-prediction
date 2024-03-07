@@ -1,0 +1,20 @@
+<table>
+    <tr>
+    <th>patient</th>
+    <th>age</th>
+    <th>gender</th>
+
+    <th>result</th>
+</tr>
+<tr>
+    {%for i in d%}
+  
+    {%for j in i.uid%}
+    <td>{{j.name}}</td>
+    <td>{{j.age}}</td>
+    <td>{{j.email}}</td>
+    {%endfor%}
+    <td>{{i.pred}}</td>
+    {%endfor%}
+</tr>
+</table>

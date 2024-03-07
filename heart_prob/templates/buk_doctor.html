@@ -1,0 +1,148 @@
+
+{%extends 'patientlayout.html'%}
+{%block content%}
+
+  
+<div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
+  <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">
+    <h2 class="title pt-5">Take Appointment</h2>
+    <ul class="breadcrumbs-custom-path mt-3 text-center">
+      <li><a href="/patientpage/{{current_user.id}}">Home</a></li>
+      <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Take Appointment </li>
+    </ul>
+  </div>
+</div>
+<!--//breadcrumb-bg-->
+<!-- banner bottom shape -->
+<div class="position-relative">
+<div class="shape overflow-hidden">
+  <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+  </svg>
+</div>
+</div>
+<br>
+<br>
+<br>
+<!-- 
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+    <!-- </div> --> 
+    <div class="main" style="margin-top: 50px;" >
+       <div class="col-md-6 col-sm-12" style="margin-top: 50px;" >
+          <div class="login-form" style="margin-top: 50px;" >
+             <form method="post" >
+              <div class="form-group" style="margin-top: 50px;" >
+                <label>Date</label>
+                <input type="date" name="date" class="form-control"  placeholder="">
+             </div>
+                <div class="form-group" style="margin-top: 50px;" >
+                   <label>Time</label>
+                   <select name="time" class="form-control">
+                    <option value="Not Selected">Select Time Slot </option>
+                    <option value="9AM - 11AM">9AM - 10AM </option>
+                    <option value="11AM - 1PM">10AM - 11AM </option>
+                    <option value="1:30PM - 3:30PM">11AM - 12PM </option>
+                    <option value="3:30PM - 4:30PM">1PM - 2PM </option>
+                    <option value="4:30PM - 6:30PM">2PM - 3PM </option>
+                    <option value="4:30PM - 6:30PM">3PM - 4PM </option>
+                    <option value="4:30PM - 6:30PM">4PM - 5PM </option>
+                   
+                   </select>
+                  
+                </div>
+              
+                <button type="submit" style="margin-left: 120px;"class="btn btn-black">Book</button>
+                <!-- <button type="submit" class="btn btn-secondary">Register</button> -->
+             </form>
+          </div>
+       </div>
+    </div>
+    <style>
+      body {
+  font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+  height: 150px;
+  background: rgb(243, 1, 1);
+ 
+}
+
+.sidenav {
+  height: 100%;
+  background-color: #000;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.main {
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+  .login-form{
+      margin-top: 10%;
+  }
+
+  .register-form{
+      margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .main{
+      margin-left: 40%; 
+  }
+
+  .sidenav{
+      width: 40%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+  }
+
+  .login-form{
+      margin-top: 80%;
+  }
+
+  .register-form{
+      margin-top: 20%;
+  }
+}
+
+
+.login-main-text{
+  margin-top: 20%;
+  padding: 60px;
+  color: #fff;
+}
+
+.login-main-text h2{
+  font-weight: 300;
+}
+
+.btn-black{
+  background-color: #000 !important;
+  color: #fff;
+}
+    </style>
+
+  
+{%endblock%}
+
+
+
