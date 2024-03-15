@@ -20,3 +20,5 @@ Nehru college B.Tech 2024
   >>>  db.session.add(obj)
   >>>  db.session.commit()
   >>>  exit()
+4. command for Run the project
+    python run.py 
