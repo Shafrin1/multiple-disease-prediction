@@ -1,7 +1,11 @@
 {%extends 'labteclayout.html'%}
 {%block content%}
 
-
+{% if alert1 %}
+<script>
+alert("Email id is alredy exist");
+</script>
+  {% endif %}
   
 <div class="breadcrumb-bg w3l-inner-page-breadcrumb py-5">
   <div class="container pt-lg-5 pt-md-3 p-lg-4 pb-md-3 my-lg-3">

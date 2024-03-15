@@ -186,12 +186,16 @@ def labtec_reg():
         number = request.form['number']
         password = request.form['password']
         Qualification=request.form['Qualification']
-        # confirm_password = request.form['confirm_password']
-        my_data = registration(name=name,email=email,number=number,Qualification=Qualification,password=password,usertype="labtec")
-        db.session.add(my_data) 
-        db.session.commit()
-        ad_sendmail(email,password)
-        return redirect('/viewlabtec')
+        
+        check = registration.query.filter_by(email=email).first()
+        if check:
+            return render_template("labtec_reg.html",alert1=True)
+        else:
+            my_data = registration(name=name,email=email,number=number,Qualification=Qualification,password=password,usertype="labtec")
+            db.session.add(my_data) 
+            db.session.commit()
+            ad_sendmail(email,password)
+            return redirect('/viewlabtec')
     return render_template("labtec_reg.html")
 
 
@@ -203,22 +207,20 @@ def Dr_reg():
         email = request.form['email']
         Specialisation=request.form['Specialisation']
         Qualification=request.form['Qualification']
-
         img=request.files['image']
         pic_file = save_picture(img)
         view = pic_file
-        print(view) 
-
-
-        # address=request.form['address']
         number = request.form['number']
         password = request.form['password']
-        # confirm_password = request.form['confirm_password']
-        my_data = registration(name=name,email=email,Image=view,number=number,Qualification=Qualification,Specialisation=Specialisation,password=password,usertype="Dr")
-        db.session.add(my_data) 
-        db.session.commit()
-        ad_sendmail(email,password)
-        return redirect('/viewDr')
+        check = registration.query.filter_by(email=email).first()
+        if check:
+            return render_template("Dr_reg.html",alert1=True)
+        else:
+            my_data = registration(name=name,email=email,Image=view,number=number,Qualification=Qualification,Specialisation=Specialisation,password=password,usertype="Dr")
+            db.session.add(my_data) 
+            db.session.commit()
+            ad_sendmail(email,password)
+            return redirect('/viewDr')
     return render_template("Dr_reg.html")   
 
 def ad_sendmail(email,password):
@@ -270,12 +272,15 @@ def patient_reg():
         address=request.form['address']
         number = request.form['number']
         password = request.form['password']
-        # confirm_password = request.form['confirm_password']
-        my_data = registration(name=name,lid=current_user.id,email=email,number=number,age=age,gender=gender,address=address,password=password,usertype="patient")
-        db.session.add(my_data) 
-        db.session.commit()
-        ad_sendmail(email,password)
-        return redirect('/viewpatient_for_labtec')
+        check = registration.query.filter_by(email=email).first()
+        if check:
+            return render_template("patient_reg.html",alert1=True)
+        else:
+            my_data = registration(name=name,lid=current_user.id,email=email,number=number,age=age,gender=gender,address=address,password=password,usertype="patient")
+            db.session.add(my_data) 
+            db.session.commit()
+            ad_sendmail(email,password)
+            return redirect('/viewpatient_for_labtec')
     return render_template("patient_reg.html")
 
 
