@@ -556,7 +556,7 @@ def heart_disease(id):
         f = open('heart_prob/nb_classifier_selected_diseases.pickle', 'rb')
         classifier = pickle.load(f)
         f.close()
-      
+       
 
         dic = {
             "diarrhoea": [request.form['value1']],
